@@ -55,18 +55,26 @@ int main() {
     printf("+------------+----------------------------+-----------------+---------+---------+-------------------+--------+\n");
 
     for (int i = 0; i < numOfStudents; i++) {
-        printf("| %5s   | %-26s |    %1s/%2s/%3s   | %6.2f  | %6.2f  |%12.2f       | %6.2f |\n",
-            students[i].studentID,
-            strcat(strcat(students[i].lastName, " "), students[i].firstName),
-            students[i].bir,
-            students[i].thd,
-            students[i].ate,
-            students[i].algebraGrade,
-            students[i].calculusGrade,  
-            students[i].programmingGrade,
-            students[i].gpa);
-        printf("+------------+----------------------------+-----------------+---------+---------+-------------------+--------+\n");
-    }
+    char fullName[50];
+    strcpy(fullName, students[i].lastName);
+    strcat(fullName, " ");
+    strcat(fullName, students[i].firstName);
+
+    printf("| %5s   | %-26s |    %1s/%2s/%3s   | %6.2f  | %6.2f  |%12.2f       | %6.2f |\n",
+        students[i].studentID,
+        fullName,
+        students[i].bir,
+        students[i].thd,
+        students[i].ate,
+        students[i].algebraGrade,
+        students[i].calculusGrade,
+        students[i].programmingGrade,
+        students[i].gpa);
+    printf("+------------+----------------------------+-----------------+---------+---------+-------------------+--------+\n");
+}
+
+
+
     printf("\n");
 
     //Print the student with highest GPA
